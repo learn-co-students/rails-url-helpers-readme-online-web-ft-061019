@@ -1,3 +1,11 @@
 <% @posts.each do |post| %>
-  <div><%= post.title %></div>
+  <!--
+  <div><a href='<%= "/posts/#{post.id}" %>'><%= post.title %></a></div>
+  same as
+  <div><%= link_to post.title, "/posts/#{post.id}" %></div>
+  same as
+  <div><%= link_to post.title, post_path(post.id) %></div>
+  same as (Rails knows to look for id when post passed in)
+  -->
+  <div><%= link_to post.title, post_path(post) %></div>
 <% end %>
